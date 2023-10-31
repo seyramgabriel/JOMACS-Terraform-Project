@@ -8,7 +8,7 @@
 
 This repository was set up in fulfilment of a JOMACS IT TERRAFORM PROJECT. 
 
-# **The objectives of the project are as follows:*
+# *The objectives of the project are as follows:*
 
 “Create a secure VPC environment in AWS using Terraform where an EC2 instance is running an Nginx web server. The EC2 instance should reside within a private subnet and should be accessible to the outside world via a load balancer. Traffic to the EC2 instance should be routed through a NAT gateway.”
 
