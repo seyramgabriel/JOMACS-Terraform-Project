@@ -1,6 +1,6 @@
 # JOMACS-Terraform-Project
 
-**PURPOSE**
+**PURPOSE OF REPO**
 
 This repository was set up in fulfilment of a JOMACS TERRAFORM PROJECT. 
 
