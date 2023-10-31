@@ -72,7 +72,7 @@ The variables were carefully chosen to ensure reusability since these particular
 
 Outputs were defined for vpc id and subnets ids in the output.tf file and marked as “sensitive = true” to avoid being displayed on the terminal upon being created.
 
-The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file, with a bucket name and key. Hence, the backend was not on the local machine.
+The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file, with a bucket name and key. Hence, the backend was not local.
 
 “aws ssm parameter” was created to store vpc id and subnets ids in the stores.tf file with a local ssm path prefix passed from a local.tf file.
 
@@ -146,7 +146,7 @@ The load balancer created was an application load balancer, with a listener on p
 
 Outputs were configured for load balancer dns name and private ec2 instance private id, in the output.tf file.
 
-The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file. Hence, the backend for this directory’s (EC2) configuration was as well not on the local machine, but had a different key from the VPC directory.
+The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file. Hence, the backend for this directory’s (EC2) configuration was as well not local, but had a different key from the VPC directory.
 
 A bash script named user_data.sh was used to bootstrap installation of nginx (and a reverse proxy) the changing of ssh port from 22 to 212 and the echoing of “JOMACS TERRAFORM PROJECTS” into “/var/www/html/index.html” file.
 
