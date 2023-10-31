@@ -8,11 +8,11 @@ This repository was set up in fulfilment of a JOMACS TERRAFORM PROJECT.
 
 “Create a secure VPC environment in AWS using Terraform where an EC2 instance is running an Nginx web server. The EC2 instance should reside within a private subnet and should be accessible to the outside world via a load balancer. Traffic to the EC2 instance should be routed through a NAT gateway.”
 
-**Fulfilling the task:**
+# **Fulfilling the task:**
 
 In line with the above objectives, terraform codes have been developed in two main directories, VPC and EC2.
 
-**VPC**
+# **VPC directory**
 
 The VPC directory contains six (6) terraform files, namely:
 
@@ -76,7 +76,7 @@ The providers, being aws and terraform, were declared in the provider.tf file. A
 
 “aws ssm parameter” was created to store vpc id and subnets ids in the stores.tf file with a local ssm path prefix passed from a local.tf file.
 
-**EC2**
+# **EC2 directory**
 
 The EC2 directory was made up of:
 
@@ -150,7 +150,7 @@ The providers, being aws and terraform, were declared in the provider.tf file. A
 
 A bash script named user_data.sh was used to bootstrap installation of nginx (and a reverse proxy) the changing of ssh port from 22 to 212 and the echoing of “JOMACS TERRAFORM PROJECTS” into “/var/www/html/index.html” file.
 
-**How to deploy the infrastructure**
+# **How to deploy the infrastructure**
 
 To deploy the infrastructure:
 
@@ -166,7 +166,7 @@ To deploy the infrastructure:
 
 In all, Twenty-six (26) resources, would be created. The load balancer dns name would be outputted on the terminal, as was declared in the output.tf file.
 
-**Assumptions made**
+# **Assumptions made**
 
 It was assumed that the private ec2 instance would need to be accessed via ssh, hence a public security group was created for a public ec2 instance. The public security group had a port 212 as its ssh port and that could be accessed only by “my IP”. The public security group was referenced in the private security group (for the private instance) to allow access to the private instance from the public instance, as a bastion host. The private security group ssh port was also 212.  The ssh port was switched from 22 to 212 via user_data.tf to enhance security. The private IP of the private instance was declared for output in the output.tf file.
 
@@ -174,7 +174,7 @@ Even though the configuration for public instance has been commented out in the 
 
 The assumption of ssh also informed the inclusion of keypair in the instance configuration.
 
-**Steps to validate the setup** 
+# **Steps to validate the setup** 
 
 To access the nginx page via the load balancer, a default html file was created for booth strapping in user_data. This file had “JOMACS TERRAFORM PROJECT” echoed into it to be displayed through a web browser. 
 
