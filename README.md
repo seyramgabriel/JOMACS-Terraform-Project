@@ -14,7 +14,7 @@ This repository was set up in fulfilment of a JOMACS IT TERRAFORM PROJECT.
 
 # **Fulfilling the task:**
 
-In line with the above objectives, terraform codes have been developed in two main directories, VPC and EC2.
+In line with the above objectives, terraform codes have been developed in two main directories, VPC and EC2, as seen in the repository.
 
 # **VPC directory**
 
