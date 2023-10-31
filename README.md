@@ -76,7 +76,7 @@ The variables were carefully chosen to ensure reusability since these particular
 
 Outputs were defined for vpc id and subnets ids in the output.tf file and marked as “sensitive = true” to avoid being displayed on the terminal upon being created.
 
-The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file, with a bucket name and key. Hence, the backend was not local.
+The providers, being aws and terraform, were declared in the provider.tf file, with a terraform version constraint on version 5.17.0 ("~> 5.17.0"). An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file, with a bucket name and key. Hence, the backend was not local.
 
 “aws ssm parameter” was created to store vpc id and subnets ids in the stores.tf file with a local ssm path prefix passed from a local.tf file.
 
