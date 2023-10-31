@@ -9,9 +9,11 @@ This repository was set up in fulfilment of a JOMACS TERRAFORM PROJECT.
 “Create a secure VPC environment in AWS using Terraform where an EC2 instance is running an Nginx web server. The EC2 instance should reside within a private subnet and should be accessible to the outside world via a load balancer. Traffic to the EC2 instance should be routed through a NAT gateway.”
 
 **Fulfilling the task:**
+
 In line with the above objectives, terraform codes have been developed in two main directories, VPC and EC2.
 
 **VPC**
+
 The VPC directory contains six (6) terraform files, namely:
 
 	vpc.tf 
