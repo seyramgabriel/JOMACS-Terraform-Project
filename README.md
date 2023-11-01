@@ -206,4 +206,4 @@ Having git cloned the repository (git clone https://github.com/seyramgabriel/JOM
 
 *CI/CD*
 
-A github workflow has been created in the .github directory to automate the running of this terraform configuration upon successive updates in the repository.
+A github workflow has been created in the .github/workflow directory to automate the running of this terraform configuration upon successive updates in the repository. There are two .yaml files. The 
