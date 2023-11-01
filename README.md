@@ -205,4 +205,4 @@ Notably, the deployment of the code is in two phases. The first phase provisions
 Having git cloned the repository (git clone https://github.com/seyramgabriel/JOMACS-Terraform-Project.git) and following the steps to deploy the infrastructure, one would be able to get this same architecture provisioned on AWS.
 
 *CI/CD*
-A workflow has been created in the .github directory to automate the running of this terraform configuration upon successive updates.
+A workflow has been created in the .github directory to automate the running of this terraform configuration upon successive updates in this repository.
