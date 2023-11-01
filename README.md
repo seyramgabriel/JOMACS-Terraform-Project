@@ -189,6 +189,7 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 copying the load balancer dns name:
 ![Screenshot (884)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/0aea55cd-d813-40b6-b627-691afedff895)
 
+
 pasting in a web browser:
 ![Screenshot (885)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/0581fce4-2d6a-4219-90e0-ec1ca79aa969)
 
