@@ -184,9 +184,13 @@ To access the nginx page via the load balancer, a default html file was created 
 
 The private ec2 instance was created without public IP and was placed in the private route table (not having internet gateway, but rather nat gateway). 
 
-HTTP traffic request to the private ec2 instance, is to be routed through the load balancer, then through the nat gateway.  A successful configuration and deployment would be validated if “JOMACS TERRAFORM PROJECTS” is displayed upon copying and pasting the displayed dns name of the load balancer in a web browser. 
+HTTP traffic request to the private ec2 instance, is to be routed through the load balancer, then through the nat gateway.  A successful configuration and deployment would be validated if “JOMACS TERRAFORM PROJECTS” is displayed upon copying and pasting the outputed dns name of the load balancer in a web browser, as demonstrated in the following two pictures.
 
-![Screenshot (880)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/4543e53d-9882-456b-aca1-e062295789e6)
+copying the load balancer dns name:
+![Screenshot (884)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/0aea55cd-d813-40b6-b627-691afedff895)
+
+pasting in a web browser:
+![Screenshot (885)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/0581fce4-2d6a-4219-90e0-ec1ca79aa969)
 
 
 # AWS Architecture of the Project:
