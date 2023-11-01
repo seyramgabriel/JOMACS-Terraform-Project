@@ -82,7 +82,7 @@ The providers, being aws and terraform, were declared in the provider.tf file, w
 
 # **EC2 directory**
 
-The EC2 directory was made up of:
+The EC2 directory is made up of:
 
 	ec2.tf
 
