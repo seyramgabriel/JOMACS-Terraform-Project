@@ -152,7 +152,7 @@ Outputs were configured for load balancer dns name and private ec2 instance priv
 
 The providers, being aws and terraform, were declared in the provider.tf file. An s3 bucket was used as the backend for the terraform configuration, this was also declared in the provider.tf file. Hence, the backend for this directory’s (EC2) configuration was as well not local, but had a different key from the VPC directory.
 
-A bash script named user_data.sh was used to bootstrap installation of nginx (and a reverse proxy) the changing of ssh port from 22 to 212 and the echoing of “JOMACS TERRAFORM PROJECTS” into “/var/www/html/index.html” file.
+A bash script named user_data.sh was used to bootstrap installation of nginx (and a reverse proxy) the changing of ssh port from 22 to 212 (sed -i "s/#Port 22/Port 212/" /etc/ssh/sshd_config) and the echoing of “JOMACS TERRAFORM PROJECTS” into “/var/www/html/index.html” file.
 
 # **How to deploy the infrastructure**
 
