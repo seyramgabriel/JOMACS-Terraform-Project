@@ -158,7 +158,7 @@ A bash script named user_data.sh was used to bootstrap installation of nginx (an
 
 To deploy the infrastructure:
 
-	An aws s3 bucket must first be created, as the backend of the configuration would be passed to s3. In this project, the s3 bucket created was “jomacs-terraform-projects”. Different keys were provided for VPC and EC2 directories. 
+	An aws s3 bucket must first be created, as the backend of the configuration would be passed to s3. In this project, the s3 bucket created was “jomacs-terraform-projects”. Different keys were provided for VPC(layer1) and EC2(layer2) directories. 
 
 	cd into VPC directory, run terraform fmt, terraform init, terraform plan, terraform validate and terraform apply. This would create the 16 resources under the VPC directory, including the aws ssm parameter for vpc id and subnets ids as depicted in the picture below. 
 
@@ -172,7 +172,7 @@ In all, Twenty-six (26) resources, would be created. The load balancer dns name 
 
 # **Assumptions made**
 
-It was assumed that the private ec2 instance would need to be accessed via ssh, hence a public security group was created for a public ec2 instance. The public security group had a port 212 as its ssh port and that could be accessed only by “my IP”. The public security group was referenced in the private security group (for the private instance) to allow access to the private instance from the public instance, as a bastion host. The private security group ssh port was also 212.  The ssh port was switched from 22 to 212 via user_data.tf to enhance security. The private IP of the private instance was declared for output in the output.tf file.
+It was assumed that the private ec2 instance would need to be accessed via ssh, hence a security group was created for a public ec2 instance. The public security group had a port 212 as its ssh port and that could be accessed only by “my IP”. The public security group was referenced in the private security group (for the private instance) to allow access to the private instance from the public instance, as a bastion host. The private security group ssh port was also 212.  The ssh port was switched from 22 to 212 via user_data.tf to enhance security. The private IP of the private instance was declared for output in the output.tf file.
 
 Even though the configuration for public instance has been commented out in the ec2.tf file, it is assumed that the need to ssh into the private instance would arise, which would occasion the creation of a public instance. The public instance configuration uses the public security group and references user_data1.tf for booth strapping to change the ssh port from 22 to 212. 
 
@@ -193,3 +193,8 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 
 
 ![Screenshot (883)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/688ac5a9-5100-48fa-8cb0-03d5fca21baa)
+
+# Conclusion
+Notably, the deployment of the code is in two phases. The first phasse provisions the network configuration of the architecture and the second phase provisions ec2 instance and load balancer with their accompanying security group and listeners.
+
+Having git cloned the repository (git clone ) and following the steps to deploy the infrastructure, one would be able to get this same architecture provisioned on AWS.
