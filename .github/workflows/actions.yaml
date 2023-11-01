@@ -1,21 +1,20 @@
-name: "Terraform"
+name: "Terraform VPC"
 
 on:
   push:
     branches:
       - main
+    paths:
+      - 'VPC/**'
 
 jobs:
-  terraform:
-    name: "Terraform"
+  terraform_vpc:
+    name: "Terraform VPC"
     runs-on: ubuntu-latest
     env:
       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
 
-    defaults:
-      run:
-        working-directory: VPC
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v2
@@ -41,8 +40,5 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
 
-  #In a real scenario, this block of terraform destroy should be commented out to prevent the destruction of the resources immediately after provisioning.
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
 
 
