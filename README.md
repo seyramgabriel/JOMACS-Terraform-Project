@@ -199,11 +199,25 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 
 ![Screenshot (883)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/688ac5a9-5100-48fa-8cb0-03d5fca21baa)
 
+
+# *CI/CD*
+
+A github workflow has been created in the .github/workflow directory to automate the running of this terraform configuration upon successive updates in the repository, specifically in the directories that have terraform configuration files (VPC and EC2). There are two yaml files, actions.yaml and actions1.yaml. The actions.yaml file contains codes that create a workflow for the running of "terraform fmt, terraform init, terraform plan, and terraform apply" in VPC directory whenever there is a commit to either VPC or EC2 directories or both. The other yaml file, actions1.yaml specifies that upon the successfull running of action.yaml file terraform will run in EC2 directory as well. This means actions1.yaml is dependent on the completion of actions.yaml. 
+
+*CI/CD Summary*
+
+1. There are two yaml files (actions.yaml and actions1.yaml) that contain different workflows.
+  
+2. actions.yaml is triggered whenever there is a commit in either VPC directory, EC2 directory, or both and the workflow in actions.yaml is to run terraform in VPC directory.
+
+3. actions1.yaml is triggered upon successful completion of actions.yaml and it runs terraform in EC2 directory.
+
+4. The two yaml files ensure that the network configurations (that is aws vpc, subnets, internet gateway and nat gateway are always available) before instances and load balancers are provisioned within the network configurations.
+
+
 # Conclusion
 Notably, the deployment of the code is in two phases. The first phase provisions the network configuration of the architecture and the second phase provisions ec2 instance and load balancer with their accompanying security group and listeners.
 
 Having git cloned the repository (git clone https://github.com/seyramgabriel/JOMACS-Terraform-Project.git) and following the steps to deploy the infrastructure, one would be able to get this same architecture provisioned on AWS.
 
-*CI/CD*
 
-A github workflow has been created in the .github/workflow directory to automate the running of this terraform configuration upon successive updates in the repository. There are two .yaml files. The action1.yaml file contains code whose running depends on execution of action.yaml file. 
