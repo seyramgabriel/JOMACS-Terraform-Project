@@ -1,7 +1,7 @@
 resource "aws_security_group" "ec2_public_security_group" {
   name        = "ec2_public_security_group"
   description = "public facing"
-  vpc_id      =  data.aws_ssm_parameter.vpc_id.value
+  vpc_id      = data.aws_ssm_parameter.vpc_id.value
 
   ingress {
     from_port   = var.web_port
@@ -111,7 +111,7 @@ resource "aws_lb" "webapp_load_balancer" {
   internal           = false
   load_balancer_type = var.ld_type
   security_groups    = ["${aws_security_group.elb_security_group.id}"]
-  subnets            = [element(split(",", data.aws_ssm_parameter.subnets_ids.value), 0 ), element(split(",", data.aws_ssm_parameter.subnets_ids.value), 1 )]
+  subnets            = [element(split(",", data.aws_ssm_parameter.subnets_ids.value), 0), element(split(",", data.aws_ssm_parameter.subnets_ids.value), 1)]
 }
 
 resource "aws_lb_listener" "star_listener" {
