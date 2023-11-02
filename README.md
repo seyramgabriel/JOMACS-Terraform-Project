@@ -216,7 +216,7 @@ A github workflow has been created in the .github/workflow directory to automate
 
 
 # Conclusion
-Notably, the deployment of the code is in two phases. The first phase provisions the network configuration of the architecture and the second phase provisions ec2 instance and load balancer with their accompanying security group and listeners.
+Notably, the deployment of the infrastructure is in two phases. The first phase provisions the network configuration of the architecture and the second phase provisions ec2 instance and load balancer with their accompanying security group and listeners.
 
 Having git cloned the repository (git clone https://github.com/seyramgabriel/JOMACS-Terraform-Project.git) and following the steps to deploy the infrastructure, one would be able to get this same architecture provisioned on AWS.
 
