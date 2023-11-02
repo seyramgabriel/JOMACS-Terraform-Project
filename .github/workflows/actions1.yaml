@@ -43,6 +43,7 @@ jobs:
       - name: Terraform Apply
         run: terraform apply -auto-approve
 
-      - name: Terraform Destroy
-        run: terraform destroy -auto-approve
+#This block of terraform destroy should be commented out to prevent the destruction of the resources immediately after provisioning.
+     # - name: Terraform Apply
+     #   run: terraform apply -auto-approve
 
