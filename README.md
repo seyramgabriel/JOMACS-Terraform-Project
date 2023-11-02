@@ -208,9 +208,9 @@ A github workflow has been created in the .github/workflow directory to automate
 
 1. There are two yaml files (actions.yaml and actions1.yaml) that contain different workflows.
   
-2. actions.yaml is triggered whenever there is a commit in either VPC directory, EC2 directory, or both and the workflow in actions.yaml is to run terraform in VPC directory.
+2. actions.yaml is triggered whenever there is a commit in either VPC directory, EC2 directory, or both. The workflow in actions.yaml is to run terraform in VPC directory.
 
-3. actions1.yaml is triggered upon successful completion of actions.yaml and it runs terraform in EC2 directory.
+3. actions1.yaml is triggered upon successful execution of actions.yaml and it runs terraform in EC2 directory.
 
 4. The two yaml files ensure that the network configurations (that is aws vpc, subnets, internet gateway and nat gateway are always available) before instances and load balancers are provisioned within the network configurations.
 
