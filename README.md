@@ -20,38 +20,38 @@ In line with the above objectives, terraform codes have been developed in two ma
 
 The VPC directory contains six (6) terraform files, namely:
 
-	vpc.tf 
+1.	vpc.tf 
 
-	variables.tf
+2.	variables.tf
 
-	output.tf
+3.	output.tf
 
-	provider.tf
+4.	provider.tf
 
-	store.tf
+5.	store.tf
 
-	locals.tf
+6.	locals.tf
 
 
 With these files, the following resources were created: 
 
-	1 aws vpc
+i.	1 aws vpc
 
-	3 aws subnets (1 private subnet, 2 public subnets; the private subnet and 1 public subnet were created in 1 availability zone, whiles the other public subnet was in a different availability zone in the same region)
+ii.	3 aws subnets (1 private subnet, 2 public subnets; the private subnet and 1 public subnet were created in 1 availability zone, whiles the other public subnet was in a different availability zone in the same region)
 
-	2 aws route tables (1 public, 1 private)
+iii.2 aws route tables (1 public, 1 private)
 
-	3 aws route table associations (2 public subnets were associated with the public route table, 1 private subnet was associated with the private route table) 
+iv.	3 aws route table associations (2 public subnets were associated with the public route table, 1 private subnet was associated with the private route table) 
 
-	1 internet gateway
+v.	1 internet gateway
 
-	1 elastic IP for nat gateway 
+vi.	1 elastic IP for nat gateway 
 
-	1 nat gateway
+vii.1 nat gateway
 
-	2 routes (1 for internet gateway and public route table, and the other for nat gateway and the private route table)
+iix.2 routes (1 for internet gateway and public route table, and the other for nat gateway and the private route table)
 
-	2 aws ssm parameter (1 for vpc id and 1 for subnets ids)
+ix.	2 aws ssm parameter (1 for vpc id and 1 for subnets ids)
 
 
 The main resource configurations were in vpc.tf file. 
@@ -84,35 +84,35 @@ The providers, being aws and terraform, were declared in the provider.tf file, w
 
 The EC2 directory is made up of:
 
-	ec2.tf
+1.	ec2.tf
 
-	variables.tf
+2.	variables.tf
 
-	output.tf
+3.	output.tf
 
-	provider.tf
+4.	provider.tf
 
-	user_data.sh
+5.	user_data.sh
 
-	store.tf
+6.	store.tf
 
-	local.tf
+7.	local.tf
 
-	user_data1.sh
+8.	user_data1.sh
 
 These files were used to create:
 
-	3 security groups (1 for private ec2 instance, 1 for load balancer, 1 for a probable public ec2 instance)
+i.	3 security groups (1 for private ec2 instance, 1 for load balancer, 1 for a probable public ec2 instance)
 
-	1 ec2 instance
+ii.	1 ec2 instance
 
-	1 aws load balancer
+iii.1 aws load balancer
 
-	1 aws listener
+iv.	1 aws listener
 
-	1 aws load balancer target group
+v.	1 aws load balancer target group
 
-	1 aws load balancer attachment
+vi.	1 aws load balancer attachment
 
 The resources outlined above, in EC2 directory, had main configurations in a ec2.tf file. 
 
