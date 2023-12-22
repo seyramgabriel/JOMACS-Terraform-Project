@@ -1,6 +1,6 @@
 resource "aws_security_group" "ec2_public_security_group" {
   name        = "ec2_public_security_group"
-  description = "public facing instance"
+  description = "public facing ec2 instance"
   vpc_id      = data.aws_ssm_parameter.vpc_id.value
 
   ingress {
