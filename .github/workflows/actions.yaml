@@ -5,7 +5,7 @@ on:
     inputs:
       approve:
         description: 'Approve the Terraform VPC workflow'
-        required: true
+        required: false
   push:
     branches:
       - main
