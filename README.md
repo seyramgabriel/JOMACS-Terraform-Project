@@ -202,7 +202,7 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 
 # *CI/CD*
 
-A github workflow has been created in the .github/workflow directory to automate the running of this terraform configuration upon successive updates in the repository, specifically in the directories that have terraform configuration files (VPC and EC2). There are two yaml files, actions.yaml and actions1.yaml. The actions.yaml file contains codes that create a workflow for the running of "terraform fmt, terraform init, terraform plan, and terraform apply" in VPC directory whenever there is a commit to either VPC or EC2 directories or both. The other yaml file, actions1.yaml specifies that upon the successfull running of action.yaml file terraform will run in EC2 directory as well. This means actions1.yaml is dependent on the completion of actions.yaml. 
+A github workflow has been created in the .github/workflows directory to automate the running of this terraform configuration upon successive updates in the repository, specifically in the directories that have terraform configuration files (VPC and EC2). There are two yaml files, actions.yaml and actions1.yaml. The actions.yaml file contains codes that create a workflow for the running of "terraform fmt, terraform init, terraform plan, and terraform apply" in VPC directory whenever there is a commit to either VPC or EC2 directories or both. The other yaml file, actions1.yaml specifies that upon the successfull running of action.yaml file terraform will run in EC2 directory as well. This means actions1.yaml is dependent on the completion of actions.yaml. 
 
 *CI/CD Summary*
 
