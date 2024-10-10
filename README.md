@@ -174,7 +174,7 @@ In all, Twenty-six (26) resources, would be created. The load balancer dns name 
 
 It was assumed that the private ec2 instance would need to be accessed via ssh, hence a security group was created for a public ec2 instance. The public security group had a port 212 as its ssh port and that could be accessed only by “my IP”. The public security group was referenced in the private security group (for the private instance) to allow access to the private instance from the public instance, as a bastion host. The private security group ssh port was also 212.  The ssh port was switched from 22 to 212 via user_data.tf to enhance security. The private IP of the private instance was declared for output in the output.tf file.
 
-Even though the configuration for public instance has been commented out in the ec2.tf file, it is assumed that the need to ssh into the private instance would arise, which would occasion the creation of a public instance. The public instance configuration uses the public security group and references user_data1.tf for booth strapping to change the ssh port from 22 to 212. 
+Even though the configuration for public instance has been commented out in the ec2.tf file, it is assumed that the need to ssh into the private instance would arise, which would occasion the creation of a public instance. The public instance configuration uses the public security group and references user_data1.tf for boot strapping to change the ssh port from 22 to 212. 
 
 The assumption of ssh also informed the inclusion of keypair in the instance configuration.
 
