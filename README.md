@@ -197,7 +197,7 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 # AWS Architecture of the Project:
 
 
-![Screenshot (883)](https://github.com/seyramgabriel/JOMACS-Terraform-Project/assets/130064282/688ac5a9-5100-48fa-8cb0-03d5fca21baa)
+![Private-ec2-nginx-server](https://github.com/user-attachments/assets/7c25ae7e-34af-42d4-945c-1b0eb76733a6)
 
 
 # *CI/CD*
