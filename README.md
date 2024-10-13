@@ -197,7 +197,7 @@ HTTP traffic request to the private ec2 instance, is to be routed through the lo
 # AWS Architecture of the Project:
 
 
-![Private-ec2-nginx-server](https://github.com/user-attachments/assets/7c25ae7e-34af-42d4-945c-1b0eb76733a6)
+![Private-ec2-nginx-server (4)](https://github.com/user-attachments/assets/0d72be90-e8fa-4086-80bf-102c29f80dd1)
 
 
 # *CI/CD*
